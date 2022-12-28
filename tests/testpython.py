@@ -25,7 +25,7 @@ def generate_log():
 
 def output_logging():
 	for i in range(0,file_count):
-			with open('input/file%i.log' %i, 'w') as fo:
+			with open('input/file%i.log' %i, 'w+') as fo:
 				for j in range(0,record_count):
 					fo.write(generate_log()+'\n')
 

@@ -1,23 +1,33 @@
-group 'org.sky'
-
-apply plugin: 'java'
+plugins {
+    id 'java-library'
+}
 
 sourceCompatibility = 1.8
+
+group 'org.sky'
+version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    compile 'commons-io:commons-io:2.4'
-    compile 'commons-cli:commons-cli:1.2'
-    compile 'com.google.code.gson:gson:2.6.2'
-    testCompile 'junit:junit:4.11'
+    implementation 'commons-io:commons-io:2.4'
+    implementation 'commons-cli:commons-cli:1.2'
+    implementation 'com.google.code.gson:gson:2.3.1'
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.1'
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.7.1'
+}
+
+test {
+    useJUnitPlatform()
 }
 
 jar {
+    duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
     from {
-        (configurations.runtime).collect {
+        (configurations.runtimeClasspath).collect {
             it.isDirectory() ? it : zipTree(it)
         }
     }

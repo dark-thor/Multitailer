@@ -24,7 +24,7 @@ def generate_log():
 	return json.dumps(data)
 
 def output_logging():
-	with open('input/file11.log', 'w') as fo:
+	with open('input/file11.log', 'w+') as fo:
 		for i in range(0,file_count):
 				with open('input/file%i.log' %i) as f:
 					lines = f.readlines()

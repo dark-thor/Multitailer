@@ -8,11 +8,11 @@ and give a coherent single timeline of log messages.
 
 ### Getting Started
 
-Requires gradle, python, JDK 1.8
+Requires gradle 7, python, JDK 1.8
 
 ### Build
 
-`gradle build`
+`./gradlew build`
 
 ### Running the program
 

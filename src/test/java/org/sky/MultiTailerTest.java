@@ -5,7 +5,8 @@ import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.LineIterator;
 import org.junit.Assert;
 import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -66,7 +67,7 @@ public class MultiTailerTest {
                 result += lineIterator.nextLine();
             }
             Assert.assertEquals("{  \"note\": \"content note\",  \"at\": \"Wed Mar 16 19:08:54 PDT 2016\"," +
-                    "  \"input\": \"/home/thor/IdeaProjects/Multitailer/input/file1.txt\"}", result);
+                    "  \"input\": \"/home/thor/IdeaProjects/MultiFileTailer/input/file1.txt\"}", result);
             LineIterator.closeQuietly(lineIterator);
 
             classUnderTest.handleExit();
