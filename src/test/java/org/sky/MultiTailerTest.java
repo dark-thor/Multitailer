@@ -65,8 +65,8 @@ public class MultiTailerTest {
             for (int i = 0; i < 5; i++) {
                 result += lineIterator.nextLine();
             }
-            Assert.assertEquals(result, "{  \"note\": \"content note\",  \"at\": \"Wed Mar 16 19:08:54 PDT 2016\"," +
-                    "  \"input\": \"/home/thor/IdeaProjects/multitailer/input/file1.txt\"}");
+            Assert.assertEquals("{  \"note\": \"content note\",  \"at\": \"Wed Mar 16 19:08:54 PDT 2016\"," +
+                    "  \"input\": \"/home/thor/IdeaProjects/Multitailer/input/file1.txt\"}", result);
             LineIterator.closeQuietly(lineIterator);
 
             classUnderTest.handleExit();
